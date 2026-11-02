@@ -1,0 +1,40 @@
+// Render: dot -Tpng -Gdpi=160 docs/architecture.dot -o docs/images/architecture.png
+digraph G {
+  rankdir=LR; bgcolor="#fcfcfb"; pad=0.3; nodesep=0.35; ranksep=0.45;
+  node [shape=box style="rounded,filled" fontname="Helvetica" fontsize=11 color="#52514e" fillcolor="#ffffff" fontcolor="#0b0b0b" penwidth=1.2];
+  edge [color="#52514e" fontname="Helvetica" fontsize=9 fontcolor="#52514e" arrowsize=0.7];
+
+  subgraph cluster_index {
+    label="Indexing (in memory, batch upsert, atomic swap)"; fontname="Helvetica-Bold"; fontsize=11; color="#2a78d6"; style="rounded,dashed";
+    kb [label="kb/articles.json\nvalidate ids" fillcolor="#e8f1fc"];
+    chunk [label="sentence-window chunker\n3 sentences · 1 overlap"];
+    lex [label="BM25 + TF-IDF\n(sklearn, stemmed terms)"];
+    vec [label="InMemoryVectorStore\nbatched embeddings\n(API key or local model)"];
+    kb -> chunk -> lex; chunk -> vec [style=dashed label="hybrid"];
+  }
+
+  subgraph cluster_graph {
+    label="LangGraph answer pipeline (every node timed → trace)"; fontname="Helvetica-Bold"; fontsize=11; color="#1baf7a"; style="rounded,dashed";
+    ig [label="input_guard\nregex: injection · length\nPII redaction" shape=hexagon fillcolor="#fff4e0"];
+    rp [label="rephrase\n(LLM mode only)"];
+    rt [label="retrieve\nhybrid fusion · top 6"];
+    rr [label="rerank\nTF-IDF / cross-encoder → top 3"];
+    gt [label="relevance gate\n+ contact guard" shape=hexagon fillcolor="#fff4e0"];
+    gen [label="generate\nLLM (retry, backoff, next provider)\n→ deterministic extractive" fillcolor="#e8f7f1"];
+    og [label="output_guard\nungrounded numbers / contacts" shape=hexagon fillcolor="#fff4e0"];
+    rf [label="refuse\ninsufficient_context" fillcolor="#fdecec"];
+    fin [label="finalize\nverify citations: invented ·\nnot retrieved · duplicate · unsupported" fillcolor="#e8f1fc"];
+    ig -> rp -> rt -> rr -> gt;
+    gt -> gen [label="plausible"]; gt -> rf [label="off-topic"];
+    ig -> rf [label="blocked"];
+    gen -> og -> fin; rf -> fin;
+  }
+
+  providers [label="OpenAI · Gemini · Claude · OpenRouter\none openai SDK · small / best tiers" shape=component fillcolor="#f3f0fc"];
+  q [label="question\nCLI · POST /answer · /answer/batch" shape=oval fillcolor="#f0efec"];
+  out [label="Answer JSON\n+ run_log.jsonl · /metrics\n(step ms · tokens · est. cost)" shape=note fillcolor="#f0efec"];
+
+  q -> ig; lex -> rt; vec -> rt;
+  rp -> providers [style=dotted dir=both arrowtail=none]; gen -> providers [style=dotted];
+  fin -> out;
+}

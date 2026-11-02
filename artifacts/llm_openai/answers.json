@@ -1,0 +1,40 @@
+[
+  {
+    "question_id": "Q1",
+    "answer": "If you requested multiple password reset emails, only the latest reset link remains valid—use the most recent link you received. The reset link works for 15 minutes from when it was issued.",
+    "citations": [
+      "ART-101"
+    ],
+    "insufficient_context": false
+  },
+  {
+    "question_id": "Q2",
+    "answer": "No. If you lose access to your authenticator app, you must complete identity verification before 2FA can be removed, and support cannot bypass identity verification.",
+    "citations": [
+      "ART-102"
+    ],
+    "insufficient_context": false
+  },
+  {
+    "question_id": "Q3",
+    "answer": "When your client exceeds the API rate limit, the API returns HTTP 429. Your client should implement exponential backoff and retry with jitter.",
+    "citations": [
+      "ART-301"
+    ],
+    "insufficient_context": false
+  },
+  {
+    "question_id": "Q4",
+    "answer": "No—webhook events are delivered at least once, so duplicate deliveries are possible. Consumers should handle this by verifying signatures, storing event IDs, and processing events idempotently.",
+    "citations": [
+      "ART-302"
+    ],
+    "insufficient_context": false
+  },
+  {
+    "question_id": "Q5",
+    "answer": "I can't answer that from the support knowledge base. Please contact the support team so an agent can help.",
+    "citations": [],
+    "insufficient_context": true
+  }
+]

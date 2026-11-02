@@ -1,0 +1,514 @@
+{
+  "answer_mode": "llm",
+  "llm_providers": [
+    "openai"
+  ],
+  "retrieval_mode": "hybrid",
+  "embedder": "openai:text-embedding-3-small",
+  "reranker": "lexical-tfidf",
+  "deterministic_answerer": "deterministic-lexical",
+  "num_articles": 6,
+  "num_chunks": 7,
+  "index_build": {
+    "step_timings_ms": {
+      "index.chunk": 0.03,
+      "index.build": 7115.27
+    },
+    "embedding_tokens": 294,
+    "est_cost_usd": 5.88e-06
+  },
+  "debug": {
+    "Q1": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.04,
+          "rephrase": 1712.26,
+          "retrieve": 1189.31,
+          "gate": 0.07,
+          "generate": 2031.98,
+          "output_guard": 0.06,
+          "finalize": 0.21
+        },
+        "tokens_by_step": {
+          "rephrase": {
+            "prompt_tokens": 80,
+            "completion_tokens": 29,
+            "calls": 1,
+            "est_cost_usd": 5.225e-05
+          },
+          "retrieve": {
+            "prompt_tokens": 37,
+            "completion_tokens": 0,
+            "calls": 1,
+            "est_cost_usd": 7.4e-07
+          },
+          "generate": {
+            "prompt_tokens": 375,
+            "completion_tokens": 61,
+            "calls": 1,
+            "est_cost_usd": 0.00015125
+          }
+        },
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "prompt_tokens": 492,
+        "completion_tokens": 90,
+        "est_cost_usd": 0.00020424,
+        "calls": [
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 80,
+            "completion_tokens": 29,
+            "latency_ms": 1711.48,
+            "cost_usd": 5.225e-05,
+            "ok": true,
+            "step": "rephrase"
+          },
+          {
+            "kind": "embedding",
+            "provider": "openai",
+            "model": "text-embedding-3-small",
+            "prompt_tokens": 37,
+            "completion_tokens": 0,
+            "latency_ms": 1185.81,
+            "cost_usd": 7.4e-07,
+            "ok": true,
+            "step": "retrieve"
+          },
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 375,
+            "completion_tokens": 61,
+            "latency_ms": 2031.72,
+            "cost_usd": 0.00015125,
+            "ok": true,
+            "step": "generate"
+          }
+        ],
+        "events": []
+      },
+      "queries": [
+        "My reset email came twice. Which link should I use and how long does it work?",
+        "password reset email sent twice which reset link to use how long does password reset link work expiration time"
+      ],
+      "gate_reason": "dense similarity",
+      "scores": [
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.6146,
+          "lexical": 1.0,
+          "dense": 0.7001,
+          "rerank": 0.3791
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.5574,
+          "lexical": 0.8957,
+          "dense": 0.6397,
+          "rerank": 0.3471
+        },
+        {
+          "chunk_id": "ART-102-C1",
+          "score": 0.0848,
+          "lexical": 0.0,
+          "dense": 0.3394,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q2": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.02,
+          "rephrase": 1890.26,
+          "retrieve": 1892.27,
+          "gate": 0.02,
+          "generate": 1263.13,
+          "output_guard": 0.03,
+          "finalize": 0.03
+        },
+        "tokens_by_step": {
+          "rephrase": {
+            "prompt_tokens": 74,
+            "completion_tokens": 34,
+            "calls": 1,
+            "est_cost_usd": 5.73e-05
+          },
+          "retrieve": {
+            "prompt_tokens": 36,
+            "completion_tokens": 0,
+            "calls": 1,
+            "est_cost_usd": 7.2e-07
+          },
+          "generate": {
+            "prompt_tokens": 371,
+            "completion_tokens": 55,
+            "calls": 1,
+            "est_cost_usd": 0.00014295
+          }
+        },
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "prompt_tokens": 481,
+        "completion_tokens": 89,
+        "est_cost_usd": 0.00020097,
+        "calls": [
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 74,
+            "completion_tokens": 34,
+            "latency_ms": 1890.1,
+            "cost_usd": 5.73e-05,
+            "ok": true,
+            "step": "rephrase"
+          },
+          {
+            "kind": "embedding",
+            "provider": "openai",
+            "model": "text-embedding-3-small",
+            "prompt_tokens": 36,
+            "completion_tokens": 0,
+            "latency_ms": 1890.84,
+            "cost_usd": 7.2e-07,
+            "ok": true,
+            "step": "retrieve"
+          },
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 371,
+            "completion_tokens": 55,
+            "latency_ms": 1263.05,
+            "cost_usd": 0.00014295,
+            "ok": true,
+            "step": "generate"
+          }
+        ],
+        "events": []
+      },
+      "queries": [
+        "Can support disable my 2FA without verifying me first?",
+        "Can support disable my two-factor authentication (2FA) without verifying my identity first? support disable 2FA without verification"
+      ],
+      "gate_reason": "dense similarity",
+      "scores": [
+        {
+          "chunk_id": "ART-102-C1",
+          "score": 0.5134,
+          "lexical": 1.0,
+          "dense": 0.6443,
+          "rerank": 0.2047
+        },
+        {
+          "chunk_id": "ART-202-C1",
+          "score": 0.3014,
+          "lexical": 0.6669,
+          "dense": 0.2947,
+          "rerank": 0.122
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.1661,
+          "lexical": 0.2343,
+          "dense": 0.3268,
+          "rerank": 0.0517
+        }
+      ]
+    },
+    "Q3": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.01,
+          "rephrase": 2459.36,
+          "retrieve": 3881.38,
+          "gate": 0.05,
+          "generate": 1733.22,
+          "output_guard": 0.18,
+          "finalize": 0.09
+        },
+        "tokens_by_step": {
+          "rephrase": {
+            "prompt_tokens": 73,
+            "completion_tokens": 31,
+            "calls": 1,
+            "est_cost_usd": 5.335e-05
+          },
+          "retrieve": {
+            "prompt_tokens": 32,
+            "completion_tokens": 0,
+            "calls": 1,
+            "est_cost_usd": 6.4e-07
+          },
+          "generate": {
+            "prompt_tokens": 369,
+            "completion_tokens": 51,
+            "calls": 1,
+            "est_cost_usd": 0.00013755
+          }
+        },
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "prompt_tokens": 474,
+        "completion_tokens": 82,
+        "est_cost_usd": 0.00019154,
+        "calls": [
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 73,
+            "completion_tokens": 31,
+            "latency_ms": 2459.29,
+            "cost_usd": 5.335e-05,
+            "ok": true,
+            "step": "rephrase"
+          },
+          {
+            "kind": "embedding",
+            "provider": "openai",
+            "model": "text-embedding-3-small",
+            "prompt_tokens": 32,
+            "completion_tokens": 0,
+            "latency_ms": 3877.57,
+            "cost_usd": 6.4e-07,
+            "ok": true,
+            "step": "retrieve"
+          },
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 369,
+            "completion_tokens": 51,
+            "latency_ms": 1732.79,
+            "cost_usd": 0.00013755,
+            "ok": true,
+            "step": "generate"
+          }
+        ],
+        "events": []
+      },
+      "queries": [
+        "What should my client do after hitting the API limit?",
+        "client actions after hitting API rate limit or API quota limit exceeded error; what to do after API limit reached"
+      ],
+      "gate_reason": "dense similarity",
+      "scores": [
+        {
+          "chunk_id": "ART-301-C1",
+          "score": 0.6156,
+          "lexical": 1.0,
+          "dense": 0.6195,
+          "rerank": 0.4215
+        },
+        {
+          "chunk_id": "ART-202-C1",
+          "score": 0.0738,
+          "lexical": 0.0,
+          "dense": 0.2952,
+          "rerank": 0.0
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.0672,
+          "lexical": 0.0,
+          "dense": 0.2687,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q4": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.01,
+          "rephrase": 1782.7,
+          "retrieve": 1995.17,
+          "gate": 0.04,
+          "generate": 1264.97,
+          "output_guard": 0.03,
+          "finalize": 0.04
+        },
+        "tokens_by_step": {
+          "rephrase": {
+            "prompt_tokens": 68,
+            "completion_tokens": 39,
+            "calls": 1,
+            "est_cost_usd": 6.235e-05
+          },
+          "retrieve": {
+            "prompt_tokens": 35,
+            "completion_tokens": 0,
+            "calls": 1,
+            "est_cost_usd": 7e-07
+          },
+          "generate": {
+            "prompt_tokens": 352,
+            "completion_tokens": 59,
+            "calls": 1,
+            "est_cost_usd": 0.00014415
+          }
+        },
+        "llm_calls": 2,
+        "embedding_calls": 1,
+        "prompt_tokens": 455,
+        "completion_tokens": 98,
+        "est_cost_usd": 0.0002072,
+        "calls": [
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 68,
+            "completion_tokens": 39,
+            "latency_ms": 1782.64,
+            "cost_usd": 6.235e-05,
+            "ok": true,
+            "step": "rephrase"
+          },
+          {
+            "kind": "embedding",
+            "provider": "openai",
+            "model": "text-embedding-3-small",
+            "prompt_tokens": 35,
+            "completion_tokens": 0,
+            "latency_ms": 1993.35,
+            "cost_usd": 7e-07,
+            "ok": true,
+            "step": "retrieve"
+          },
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 352,
+            "completion_tokens": 59,
+            "latency_ms": 1264.84,
+            "cost_usd": 0.00014415,
+            "ok": true,
+            "step": "generate"
+          }
+        ],
+        "events": []
+      },
+      "queries": [
+        "Are webhooks exactly once?",
+        "Are webhooks exactly once delivery semantics? webhook exactly-once guarantee, idempotent webhook delivery, at-least-once vs exactly-once"
+      ],
+      "gate_reason": "dense similarity",
+      "scores": [
+        {
+          "chunk_id": "ART-302-C1",
+          "score": 0.5762,
+          "lexical": 1.0,
+          "dense": 0.7162,
+          "rerank": 0.2943
+        },
+        {
+          "chunk_id": "ART-301-C1",
+          "score": 0.072,
+          "lexical": 0.0,
+          "dense": 0.2881,
+          "rerank": 0.0
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.0573,
+          "lexical": 0.0,
+          "dense": 0.2292,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q5": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.02,
+          "rephrase": 748.15,
+          "retrieve": 823.52,
+          "gate": 0.04,
+          "refuse": 0.02,
+          "finalize": 0.02
+        },
+        "tokens_by_step": {
+          "rephrase": {
+            "prompt_tokens": 73,
+            "completion_tokens": 16,
+            "calls": 1,
+            "est_cost_usd": 3.46e-05
+          },
+          "retrieve": {
+            "prompt_tokens": 17,
+            "completion_tokens": 0,
+            "calls": 1,
+            "est_cost_usd": 3.4e-07
+          }
+        },
+        "llm_calls": 1,
+        "embedding_calls": 1,
+        "prompt_tokens": 90,
+        "completion_tokens": 16,
+        "est_cost_usd": 3.494e-05,
+        "calls": [
+          {
+            "kind": "chat",
+            "provider": "openai",
+            "model": "gpt-5.4-nano",
+            "prompt_tokens": 73,
+            "completion_tokens": 16,
+            "latency_ms": 747.98,
+            "cost_usd": 3.46e-05,
+            "ok": true,
+            "step": "rephrase"
+          },
+          {
+            "kind": "embedding",
+            "provider": "openai",
+            "model": "text-embedding-3-small",
+            "prompt_tokens": 17,
+            "completion_tokens": 0,
+            "latency_ms": 821.9,
+            "cost_usd": 3.4e-07,
+            "ok": true,
+            "step": "retrieve"
+          }
+        ],
+        "events": []
+      },
+      "queries": [
+        "Can you tell me the CEO's direct email address?",
+        "CEO direct email address contact information"
+      ],
+      "gate_reason": "contact details requested but none in context",
+      "scores": [
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.3755,
+          "lexical": 1.0,
+          "dense": 0.206,
+          "rerank": 0.1479
+        },
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.3306,
+          "lexical": 0.8888,
+          "dense": 0.1841,
+          "rerank": 0.1247
+        },
+        {
+          "chunk_id": "ART-202-C1",
+          "score": 0.2891,
+          "lexical": 1.0,
+          "dense": 0.1562,
+          "rerank": 0.0
+        }
+      ]
+    }
+  }
+}

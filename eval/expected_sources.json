@@ -1,0 +1,8 @@
+{
+  "_comment": "Keyed by question text (case- and whitespace-insensitive), so renumbered IDs still match. Value: expected article IDs, or \"unsupported\".",
+  "My reset email came twice. Which link should I use and how long does it work?": ["ART-101"],
+  "Can support disable my 2FA without verifying me first?": ["ART-102"],
+  "What should my client do after hitting the API limit?": ["ART-301"],
+  "Are webhooks exactly once?": ["ART-302"],
+  "Can you tell me the CEO's direct email address?": "unsupported"
+}

@@ -1,0 +1,15 @@
+# secrets: never commit
+.env
+.env.*
+!.env.example
+
+# local
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+scratch_*.py
+
+# load-test raw CSVs (charts in docs/images are committed)
+artifacts/loadtest/

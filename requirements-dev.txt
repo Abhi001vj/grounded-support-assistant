@@ -1,0 +1,7 @@
+# Dev tools: load testing, benchmark charts, style checks (not needed to run the pipeline)
+-r requirements.txt
+locust>=2.20
+matplotlib>=3.8
+black>=25.1
+flake8>=7.2
+pre-commit>=4.0

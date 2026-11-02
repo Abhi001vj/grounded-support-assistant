@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install core requirements (no torch, no API keys)
+        run: pip install -r requirements.txt black flake8
+      - name: Style (black, flake8)
+        run: |
+          black --check .
+          flake8 .
+      - name: Pipeline from a clean checkout (deterministic fallback)
+        run: python main.py --no-llm
+      - name: Validate artifacts
+        run: python validate.py
+      - name: Unit and API tests
+        run: python -m pytest -q

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "Q1",
+    "question": "My reset email came twice. Which link should I use and how long does it work?"
+  },
+  {
+    "id": "Q2",
+    "question": "Can support disable my 2FA without verifying me first?"
+  },
+  {
+    "id": "Q3",
+    "question": "What should my client do after hitting the API limit?"
+  },
+  {
+    "id": "Q4",
+    "question": "Are webhooks exactly once?"
+  },
+  {
+    "id": "Q5",
+    "question": "Can you tell me the CEO's direct email address?"
+  }
+]

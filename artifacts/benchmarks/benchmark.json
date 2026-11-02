@@ -1,0 +1,156 @@
+[
+  {
+    "mode": "deterministic",
+    "model": "none (extractive)",
+    "embedder": null,
+    "retrieval_mode": "lexical",
+    "questions": 5,
+    "correct": 5,
+    "step_ms_mean": {
+      "input_guard": 0.01,
+      "rephrase": 0.0,
+      "retrieve": 0.55,
+      "gate": 0.01,
+      "generate": 0.27,
+      "output_guard": 0.02,
+      "finalize": 0.03,
+      "refuse": 0.0
+    },
+    "total_ms_mean": 1.2,
+    "tokens": {
+      "indexing": 0
+    },
+    "est_cost_usd": {
+      "indexing": 0.0
+    },
+    "est_cost_usd_total": 0.0
+  },
+  {
+    "mode": "openai-small",
+    "model": "gpt-5.4-nano",
+    "embedder": "openai:text-embedding-3-small",
+    "retrieval_mode": "hybrid",
+    "questions": 5,
+    "correct": 5,
+    "step_ms_mean": {
+      "input_guard": 0.04,
+      "rephrase": 1052.35,
+      "retrieve": 1574.98,
+      "gate": 0.04,
+      "generate": 1226.68,
+      "output_guard": 0.06,
+      "finalize": 0.09,
+      "refuse": 0.01
+    },
+    "total_ms_mean": 3612,
+    "tokens": {
+      "indexing": 294,
+      "rephrase": 504,
+      "retrieval": 145,
+      "answering": 1690
+    },
+    "est_cost_usd": {
+      "indexing": 5.88e-06,
+      "rephrase": 0.0002436,
+      "retrieval": 2.9e-06,
+      "answering": 0.00057215
+    },
+    "est_cost_usd_total": 0.00082453
+  },
+  {
+    "mode": "openai-best",
+    "model": "gpt-5.5",
+    "embedder": "openai:text-embedding-3-large",
+    "retrieval_mode": "hybrid",
+    "questions": 5,
+    "correct": 5,
+    "step_ms_mean": {
+      "input_guard": 0.03,
+      "rephrase": 1621.83,
+      "retrieve": 4168.77,
+      "gate": 0.07,
+      "generate": 1799.73,
+      "output_guard": 0.07,
+      "finalize": 0.15,
+      "refuse": 0.03
+    },
+    "total_ms_mean": 7234.6,
+    "tokens": {
+      "indexing": 294,
+      "rephrase": 485,
+      "retrieval": 126,
+      "answering": 1695
+    },
+    "est_cost_usd": {
+      "indexing": 3.822e-05,
+      "rephrase": 0.00535,
+      "retrieval": 1.638e-05,
+      "answering": 0.0141
+    },
+    "est_cost_usd_total": 0.0195046
+  },
+  {
+    "mode": "gemini-small",
+    "model": "gemini-3.5-flash-lite",
+    "embedder": "gemini:gemini-embedding-001",
+    "retrieval_mode": "hybrid",
+    "questions": 5,
+    "correct": 5,
+    "step_ms_mean": {
+      "input_guard": 0.03,
+      "rephrase": 833.33,
+      "retrieve": 545.43,
+      "gate": 0.06,
+      "generate": 843.57,
+      "output_guard": 0.04,
+      "finalize": 0.07,
+      "refuse": 0.01
+    },
+    "total_ms_mean": 2056.8,
+    "tokens": {
+      "indexing": 0,
+      "rephrase": 434,
+      "retrieval": 0,
+      "answering": 1747
+    },
+    "est_cost_usd": {
+      "indexing": 0.0,
+      "rephrase": 0.0003282,
+      "retrieval": 0.0,
+      "answering": 0.0010191
+    },
+    "est_cost_usd_total": 0.0013473
+  },
+  {
+    "mode": "gemini-best",
+    "model": "gemini-3.1-pro-preview",
+    "embedder": "gemini:gemini-embedding-001",
+    "retrieval_mode": "hybrid",
+    "questions": 5,
+    "correct": 5,
+    "step_ms_mean": {
+      "input_guard": 0.03,
+      "rephrase": 3735.31,
+      "retrieve": 698.94,
+      "gate": 0.04,
+      "generate": 3451.58,
+      "output_guard": 0.06,
+      "finalize": 0.13,
+      "refuse": 0.02
+    },
+    "total_ms_mean": 7198.8,
+    "tokens": {
+      "indexing": 0,
+      "rephrase": 441,
+      "retrieval": 0,
+      "answering": 1757
+    },
+    "est_cost_usd": {
+      "indexing": 0.0,
+      "rephrase": 0.001852,
+      "retrieval": 0.0,
+      "answering": 0.005864
+    },
+    "est_cost_usd_total": 0.007716
+  }
+]

@@ -1,0 +1,259 @@
+{
+  "answer_mode": "deterministic",
+  "llm_providers": [],
+  "retrieval_mode": "lexical",
+  "embedder": null,
+  "reranker": "lexical-tfidf",
+  "deterministic_answerer": "deterministic-lexical",
+  "num_articles": 6,
+  "num_chunks": 7,
+  "index_build": {
+    "step_timings_ms": {
+      "index.chunk": 0.03,
+      "index.build": 7.03
+    },
+    "embedding_tokens": 0,
+    "est_cost_usd": 0.0
+  },
+  "debug": {
+    "Q1": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.02,
+          "rephrase": 0.0,
+          "retrieve": 6.11,
+          "gate": 0.01,
+          "generate": 0.32,
+          "output_guard": 0.02,
+          "finalize": 0.02
+        },
+        "tokens_by_step": {},
+        "llm_calls": 0,
+        "embedding_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "est_cost_usd": 0.0,
+        "calls": [],
+        "events": []
+      },
+      "queries": [
+        "My reset email came twice. Which link should I use and how long does it work?"
+      ],
+      "gate_reason": "many matched terms",
+      "scores": [
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.6896,
+          "lexical": 1.0,
+          "dense": null,
+          "rerank": 0.3791
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.6158,
+          "lexical": 0.8846,
+          "dense": null,
+          "rerank": 0.3471
+        },
+        {
+          "chunk_id": "ART-102-C1",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q2": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.02,
+          "rephrase": 0.0,
+          "retrieve": 5.42,
+          "gate": 0.01,
+          "generate": 0.3,
+          "output_guard": 0.02,
+          "finalize": 0.02
+        },
+        "tokens_by_step": {},
+        "llm_calls": 0,
+        "embedding_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "est_cost_usd": 0.0,
+        "calls": [],
+        "events": []
+      },
+      "queries": [
+        "Can support disable my 2FA without verifying me first?"
+      ],
+      "gate_reason": "many matched terms",
+      "scores": [
+        {
+          "chunk_id": "ART-102-C1",
+          "score": 0.6023,
+          "lexical": 1.0,
+          "dense": null,
+          "rerank": 0.2047
+        },
+        {
+          "chunk_id": "ART-202-C1",
+          "score": 0.3945,
+          "lexical": 0.6669,
+          "dense": null,
+          "rerank": 0.122
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.143,
+          "lexical": 0.2343,
+          "dense": null,
+          "rerank": 0.0517
+        }
+      ]
+    },
+    "Q3": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.01,
+          "rephrase": 0.0,
+          "retrieve": 0.72,
+          "gate": 0.02,
+          "generate": 0.33,
+          "output_guard": 0.02,
+          "finalize": 0.08
+        },
+        "tokens_by_step": {},
+        "llm_calls": 0,
+        "embedding_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "est_cost_usd": 0.0,
+        "calls": [],
+        "events": []
+      },
+      "queries": [
+        "What should my client do after hitting the API limit?"
+      ],
+      "gate_reason": "many matched terms",
+      "scores": [
+        {
+          "chunk_id": "ART-301-C1",
+          "score": 0.7108,
+          "lexical": 1.0,
+          "dense": null,
+          "rerank": 0.4215
+        },
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q4": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.01,
+          "rephrase": 0.0,
+          "retrieve": 2.88,
+          "gate": 0.02,
+          "generate": 0.34,
+          "output_guard": 0.01,
+          "finalize": 0.02
+        },
+        "tokens_by_step": {},
+        "llm_calls": 0,
+        "embedding_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "est_cost_usd": 0.0,
+        "calls": [],
+        "events": []
+      },
+      "queries": [
+        "Are webhooks exactly once?"
+      ],
+      "gate_reason": "term coverage",
+      "scores": [
+        {
+          "chunk_id": "ART-302-C1",
+          "score": 0.6472,
+          "lexical": 1.0,
+          "dense": null,
+          "rerank": 0.2943
+        },
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        },
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        }
+      ]
+    },
+    "Q5": {
+      "trace": {
+        "step_timings_ms": {
+          "input_guard": 0.01,
+          "rephrase": 0.0,
+          "retrieve": 0.38,
+          "gate": 0.02,
+          "refuse": 0.0,
+          "finalize": 0.0
+        },
+        "tokens_by_step": {},
+        "llm_calls": 0,
+        "embedding_calls": 0,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "est_cost_usd": 0.0,
+        "calls": [],
+        "events": []
+      },
+      "queries": [
+        "Can you tell me the CEO's direct email address?"
+      ],
+      "gate_reason": "contact details requested but none in context",
+      "scores": [
+        {
+          "chunk_id": "ART-101-C2",
+          "score": 0.574,
+          "lexical": 1.0,
+          "dense": null,
+          "rerank": 0.1479
+        },
+        {
+          "chunk_id": "ART-101-C1",
+          "score": 0.5067,
+          "lexical": 0.8888,
+          "dense": null,
+          "rerank": 0.1247
+        },
+        {
+          "chunk_id": "ART-102-C1",
+          "score": 0.0,
+          "lexical": 0.0,
+          "dense": null,
+          "rerank": 0.0
+        }
+      ]
+    }
+  }
+}

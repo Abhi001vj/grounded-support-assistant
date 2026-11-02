@@ -1,0 +1,7 @@
+[flake8]
+max-line-length = 120
+extend-ignore = E203, W503
+exclude = .venv, artifacts, __pycache__
+per-file-ignores =
+    tests/*: E402
+    scripts/*: E402

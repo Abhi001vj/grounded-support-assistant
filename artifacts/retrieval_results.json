@@ -1,0 +1,107 @@
+[
+  {
+    "question_id": "Q1",
+    "question": "My reset email came twice. Which link should I use and how long does it work?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "ART-101-C1",
+        "article_id": "ART-101",
+        "score": 0.6896
+      },
+      {
+        "chunk_id": "ART-101-C2",
+        "article_id": "ART-101",
+        "score": 0.6158
+      },
+      {
+        "chunk_id": "ART-102-C1",
+        "article_id": "ART-102",
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "question_id": "Q2",
+    "question": "Can support disable my 2FA without verifying me first?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "ART-102-C1",
+        "article_id": "ART-102",
+        "score": 0.6023
+      },
+      {
+        "chunk_id": "ART-202-C1",
+        "article_id": "ART-202",
+        "score": 0.3945
+      },
+      {
+        "chunk_id": "ART-101-C2",
+        "article_id": "ART-101",
+        "score": 0.143
+      }
+    ]
+  },
+  {
+    "question_id": "Q3",
+    "question": "What should my client do after hitting the API limit?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "ART-301-C1",
+        "article_id": "ART-301",
+        "score": 0.7108
+      },
+      {
+        "chunk_id": "ART-101-C1",
+        "article_id": "ART-101",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "ART-101-C2",
+        "article_id": "ART-101",
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "question_id": "Q4",
+    "question": "Are webhooks exactly once?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "ART-302-C1",
+        "article_id": "ART-302",
+        "score": 0.6472
+      },
+      {
+        "chunk_id": "ART-101-C1",
+        "article_id": "ART-101",
+        "score": 0.0
+      },
+      {
+        "chunk_id": "ART-101-C2",
+        "article_id": "ART-101",
+        "score": 0.0
+      }
+    ]
+  },
+  {
+    "question_id": "Q5",
+    "question": "Can you tell me the CEO's direct email address?",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "ART-101-C2",
+        "article_id": "ART-101",
+        "score": 0.574
+      },
+      {
+        "chunk_id": "ART-101-C1",
+        "article_id": "ART-101",
+        "score": 0.5067
+      },
+      {
+        "chunk_id": "ART-102-C1",
+        "article_id": "ART-102",
+        "score": 0.0
+      }
+    ]
+  }
+]

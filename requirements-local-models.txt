@@ -1,0 +1,7 @@
+# Optional: local deterministic models, only used when USE_LOCAL_MODELS=1.
+# BERT extractive QA (SQuAD2), sentence-transformers embeddings, cross-encoder reranker.
+# Models download from the Hugging Face Hub on first use (~0.6 GB in total).
+-r requirements.txt
+torch>=2.2
+transformers>=4.40
+sentence-transformers>=3.0
